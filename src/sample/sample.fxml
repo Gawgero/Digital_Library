@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <AnchorPane fx:id="showBooksPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+      <children>
+         <ScrollPane pannable="true" prefHeight="400.0" prefWidth="500.0">
+            <content>
+               <VBox fx:id="contentVBox" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: green;" />
+            </content>
+         </ScrollPane>
+         <Button fx:id="backShowButton" layoutX="520.0" layoutY="350.0" mnemonicParsing="false" style="-fx-background-color: teal; -fx-cursor: hand;" text="Back" textFill="WHITE" />
+         <AnchorPane fx:id="sureDialog" layoutX="150.0" layoutY="100.0" prefHeight="197.0" prefWidth="325.0" style="-fx-background-color: lightgrey; -fx-background-radius: 25px;" visible="false">
+            <children>
+               <Button fx:id="yesDialogButton" layoutX="75.0" layoutY="159.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Yes" />
+               <Button fx:id="noDialogButton" layoutX="203.0" layoutY="159.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="No" />
+               <VBox fx:id="dialogVBox" layoutX="12.0" layoutY="10.0" prefHeight="139.0" prefWidth="300.0" />
+            </children></AnchorPane>
+         <Label fx:id="okLabel" layoutX="532.0" layoutY="324.0" text="OK" textFill="#2fc700" visible="false" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="searchPanel" prefHeight="0.0" prefWidth="270.0" visible="false">
+      <children>
+         <ScrollPane layoutY="44.0" prefHeight="356.0" prefWidth="600.0">
+            <content>
+               <VBox fx:id="fieldSpace" alignment="CENTER" prefHeight="342.0" prefWidth="593.0" />
+            </content>
+         </ScrollPane>
+         <Button fx:id="searchBoxButton" layoutX="406.0" layoutY="13.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Search" />
+         <TextField fx:id="searchField" layoutX="203.0" layoutY="13.0" />
+         <Button fx:id="backSearchButton" layoutX="7.0" layoutY="9.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Back" />
+      </children>
+   </AnchorPane>
+   <AnchorPane fx:id="addPane" layoutX="-1.0" layoutY="-3.0" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <children>
+         <TextField fx:id="addTittle" layoutX="14.0" layoutY="65.0" promptText="Title" style="-fx-background-radius: 25px; -fx-border-color: red; -fx-border-radius: 25px; -fx-background-color: green;" />
+         <TextField fx:id="addAuthor" layoutX="14.0" layoutY="108.0" promptText="Author" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-background-color: blue; -fx-border-color: yellow;" />
+         <TextField fx:id="addISBN" layoutX="14.0" layoutY="153.0" promptText="ISBN" style="-fx-background-color: red; -fx-border-color: black; -fx-background-radius: 25px; -fx-border-radius: 25px;" />
+         <TextField fx:id="addYear" layoutX="14.0" layoutY="200.0" promptText="Year" style="-fx-background-color: yellow; -fx-border-color: green; -fx-background-radius: 25px; -fx-border-radius: 25px;" />
+         <TextArea fx:id="addFreeText" layoutX="14.0" layoutY="283.0" prefHeight="64.0" prefWidth="170.0" promptText="Free text" style="-fx-background-color: pink;" visible="false" wrapText="true">
+            <font>
+               <Font name="Book Antiqua" size="15.0" />
+            </font></TextArea>
+         <Button fx:id="addBooks" layoutX="394.0" layoutY="308.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Add book" />
+         <Button fx:id="addBackFromAddBooks" layoutX="470.0" layoutY="308.0" mnemonicParsing="false" style="-fx-cursor: hand;" text="Back" />
+         <Label fx:id="addInformationForAddBooks" layoutX="201.0" layoutY="54.0" prefHeight="162.0" prefWidth="349.0" text="Πρεπει να εκχωρισετε αμα το βιβλιο που θα εισαγετε ειναι λογογτεχνικο ή επιστημονικο. Επισης θα βαλετε τον τιτλο του βιβλιου μετα τον συγγραφεα, το ISBN, ποτε βγηκε το βιβλιο και θα επιληξετε το ειδος του βιβλιου . Τελος στα επιστημονικα πεδια θα εχετε το ελευθερο κειμενο" textAlignment="CENTER" wrapText="true" />
+         <ComboBox fx:id="choiceScientificORLiterature" layoutX="14.0" layoutY="28.0" prefHeight="26.0" prefWidth="188.0" promptText="Choose Book Type" />
+         <ComboBox fx:id="addType" layoutX="14.0" layoutY="243.0" prefHeight="26.0" prefWidth="188.0" promptText="Select type first" />
+         <Label fx:id="errorLabel" layoutX="298.0" layoutY="269.0" prefHeight="27.0" prefWidth="218.0" text="Error" textAlignment="CENTER" visible="false" />
+      </children></AnchorPane>
+   <VBox fx:id="menuVBox" alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+      <Button fx:id="showButton" blendMode="MULTIPLY" mnemonicParsing="false" style="-fx-cursor: hand;" text="Show all books">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="searchButton" alignment="CENTER" blendMode="MULTIPLY" mnemonicParsing="false" style="-fx-cursor: hand;" text="Search for book" textAlignment="CENTER">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="addButton" blendMode="MULTIPLY" mnemonicParsing="false" style="-fx-cursor: hand;" text="Add book">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+         <font>
+            <Font name="Calibri" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitButton" blendMode="MULTIPLY" mnemonicParsing="false" style="-fx-cursor: hand;" text="Exit">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
+   </VBox>
+</AnchorPane>
